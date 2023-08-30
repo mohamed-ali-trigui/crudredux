@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Listarticles from './components/articlesRedux/Listarticles';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import ProductsAppAdmin from './admin/components/articles/ProductsAppAdmin';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Routes>
+    
+      <Route path='/articlesadmin' element={<Listarticles/>}/> 
+      <Route path='/articlesadmin2' element={<ProductsAppAdmin/>}/>
+      </Routes>
+      </Router>
+    </>
   );
 }
 
